@@ -53,5 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # To configure the URL for consumer, we can specify an URL using config.action_cable.url
-  config.action_cable.url = 'ws://localhost:3000/streams'
+  # config.action_cable.url = 'ws://localhost:3000/streams'
 end

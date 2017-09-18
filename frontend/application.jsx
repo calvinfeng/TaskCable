@@ -13,12 +13,13 @@ import AppBar from 'material-ui/AppBar';
 
 // Application imports
 import ReduxStore from './store';
-
+import Task from './components/Task';
 
 const Application = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
     <div>
       <AppBar title="Task cable" />
+      <Task />
     </div>
   </MuiThemeProvider>
 );
