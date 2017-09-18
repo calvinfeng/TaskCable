@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @api_task.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @api_task.description %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @api_task.completed %>
+</p>
+
+<%= link_to 'Edit', edit_api_task_path(@api_task) %> |
+<%= link_to 'Back', api_tasks_path %>

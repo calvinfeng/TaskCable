@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Api Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @api_tasks.each do |api_task| %>
+      <tr>
+        <td><%= api_task.title %></td>
+        <td><%= api_task.description %></td>
+        <td><%= api_task.completed %></td>
+        <td><%= link_to 'Show', api_task %></td>
+        <td><%= link_to 'Edit', edit_api_task_path(api_task) %></td>
+        <td><%= link_to 'Destroy', api_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Api Task', new_api_task_path %>

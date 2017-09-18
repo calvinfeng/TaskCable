@@ -15,17 +15,13 @@ import AppBar from 'material-ui/AppBar';
 import ReduxStore from './store';
 
 
-class Application extends React.Component {
-  render() {
-    return (
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-        <div>
-          <AppBar title="Task cable" />
-        </div>
-      </MuiThemeProvider>
-    );
-  }
-}
+const Application = () => (
+  <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+    <div>
+      <AppBar title="Task cable" />
+    </div>
+  </MuiThemeProvider>
+);
 
 const Router = ({ store }) => (
   <Provider store={store}>
