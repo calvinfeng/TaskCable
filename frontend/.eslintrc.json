@@ -24,7 +24,8 @@
     "afterAll": false,
     "jest": false,
     "document": false,
-    "WebSocket": false
+    "WebSocket": false,
+    "$": false
   },
   "rules": {
     "jsx-a11y/href-no-hash": "off",
@@ -52,6 +53,7 @@
     "react/jsx-closing-bracket-location": [2, "after-props"],
     "react/sort-comp": 0,
     "react/jsx-boolean-value": 0,
+    "react/no-array-index-key": 0,
     "arrow-body-style": 0,
     "react/forbid-prop-types": [0],
     "arrow-parens": [2, "always"],
@@ -66,22 +68,14 @@
     ],
     "consistent-return": 0,
     "default-case": 0,
-    "operator-linebreak": [
-      2,
-      "before"
-    ],
+    "operator-linebreak": [2, "before"],
     "brackets/array-bracket-newline": 2,
     "brackets/call-parens-newline": 2,
     "brackets/conditional-parens-newline": 2,
     "brackets/func-parens-newline": 2,
     "brackets/object-curly-newline": 2,
     "camelcase": 0,
-    "no-use-before-define": [
-      "error",
-      {
-        "functions": false
-      }
-    ]
+    "no-use-before-define": ["error", { "functions": false }]
   },
   "settings": {
     "import/resolver": {

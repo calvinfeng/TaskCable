@@ -4,24 +4,28 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { HashRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 
 // Thirdparty imports
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import AppBar from 'material-ui/AppBar';
 
 // Application imports
-import ReduxStore from './store';
-import Task from './components/Task';
-import Chart from './components/Chart';
+// import Task from './components/Task';
+// import Chart from './components/Chart';
+import Dashboard from './containers/DashBoard';
+import TaskReducer from './reducers/task';
+
+const rootReducer = combineReducers({
+  tasks: TaskReducer
+});
 
 const Application = () => (
   <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
     <div>
-      <AppBar title="Task cable" />
-      <Task />
-      <Chart />
+      <Dashboard />
     </div>
   </MuiThemeProvider>
 );
@@ -39,5 +43,6 @@ Router.propTypes = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  const ReduxStore = createStore(rootReducer, applyMiddleware(thunk));
   ReactDOM.render(<Router store={ReduxStore} />, document.getElementById('react-application'));
 });
