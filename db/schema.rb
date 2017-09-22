@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918060448) do
+ActiveRecord::Schema.define(version: 20170922020411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "api_task_items", force: :cascade do |t|
+    t.text "summary"
+    t.boolean "completed"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_api_task_items_on_task_id"
+  end
 
   create_table "api_tasks", force: :cascade do |t|
     t.string "title"

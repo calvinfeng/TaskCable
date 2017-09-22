@@ -5,6 +5,11 @@ class Api::Task < ApplicationRecord
   after_create :broadcast_create
   after_destroy :broadcast_delete
 
+  has_many :task_items,
+  primary_key: :id,
+  foreign_key: :task_id,
+  class_name: :TaskItem
+
   # We want to broadcast an event every time a new task gets created, saved and deleted.
   # So we want to do an after_create and after_destroy
 

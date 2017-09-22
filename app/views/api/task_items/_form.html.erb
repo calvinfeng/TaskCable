@@ -1,0 +1,27 @@
+<%= form_with(model: api_task_item, local: true) do |form| %>
+  <% if api_task_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(api_task_item.errors.count, "error") %> prohibited this api_task_item from being saved:</h2>
+
+      <ul>
+      <% api_task_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_area :summary, id: :api_task_item_summary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completed %>
+    <%= form.check_box :completed, id: :api_task_item_completed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
