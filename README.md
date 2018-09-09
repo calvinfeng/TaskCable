@@ -1,5 +1,5 @@
-# Task Cable
-This is a experimental project for Rails 5 ActionCable
+# Real Time Update
+This is for trying out Rails 5 ActionCable. The objective is to see how does model update trigger an emission of websocket message to client/subscriber.
 
 A client can create task and every other clients will receive the updates in real time using WebSocket technology
 
